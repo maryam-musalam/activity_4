@@ -43,7 +43,7 @@ class ShowInfo(BaseHTTPRequestHandler):
             self.send_header('Location' , '/')
             self.end_headers()
             
-            known = "'{}' is '{}' in '{}' studying '{}'. he/she is '{}' ".format(name ,enrollment,  city, nanodegree , status)
+            known = "{} is {} in {} studying {}. he/she is {}".format(name ,enrollment,  city, nanodegree , status)
             self.wfile.write(form.format(known).encode())
         
         else:
