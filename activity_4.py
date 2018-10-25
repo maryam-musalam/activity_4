@@ -52,5 +52,13 @@ class ShowInfo(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write("you can't leave empty feilds".encode())
 
+     def do_GET(self):
+         #get the info and display it
+         self.send_response(200)
+         self.send_header('content-type' , 'text/html')
+         self.end_headers()
+         known = "\n".join("{} : {}".format(key, memory[key]) for key in sorted(memory.keys()))
+         self.wfile.write(form.format(known).encode())
+
 
 
