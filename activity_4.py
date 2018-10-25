@@ -22,3 +22,5 @@ form = '''<!DOCTYPE html>
     </pre>
     '''
 
+class ShowInfo(BaseHTTPRequestHandler):
+
