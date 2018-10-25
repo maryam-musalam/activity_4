@@ -60,5 +60,9 @@ class ShowInfo(BaseHTTPRequestHandler):
          known = "\n".join("{} : {}".format(key, memory[key]) for key in sorted(memory.keys()))
          self.wfile.write(form.format(known).encode())
 
+if __name__ == '__main__':
+    server_address = ('', 8000)
+    httpd = HTTPServer(server_address, ShowInfo)
+    httpd.serve_forever()
 
 
